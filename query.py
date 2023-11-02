@@ -3,7 +3,7 @@ from movies import Movies
 def main() :
     movies = Movies('./movies.txt')
     choice = ""
-    word = ""
+    keyword = ""
     while True :
         print("q: quit")
         print("sn: search movie names")
@@ -14,12 +14,15 @@ def main() :
             print("Exiting the program")
             break
         elif choice == "sn" :
-            word = input("enter a word to search: ")
+            keyword = input("enter a word to search: ")
+            movies.search_movies_by_name(keyword)
             break
         elif choice == "sc" :
-            word = input("enter a word to search: ")
+            keyword = input("enter a word to search: ")
+            movies.search_movies_by_cast(keyword)
             break
         elif choice == "list" :
+            movies.list_all_movies()
             break
         print()
 
