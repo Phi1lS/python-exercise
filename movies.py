@@ -28,7 +28,7 @@ class Movies:
                     'cast': movie_cast
                 }
             )
-
+            
     def search_movies_by_name(self, keyword):
         matched_movies = []
         for movie in self._movies:
@@ -40,6 +40,11 @@ class Movies:
                 print(movie_name)
         else:
             print("No matching movie found.")
+
+    def list_all_movies(self) :
+        for movie in self._movies:
+            print(movie['name'])
+
 
 if __name__ == "__main__":
     movies = Movies('./movies.txt')
