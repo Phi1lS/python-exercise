@@ -46,5 +46,27 @@ class Movies:
             print(movie['name'])
 
 
+    def search_movies_by_cast(self, keyword):
+        matched_movies = []
+
+        for movie in self._movies:
+            matched_cast = []
+            for actor in movie['cast']:
+                if keyword.lower() in actor.lower():
+                    matched_cast.append(actor)
+            if matched_cast:
+                matched_movies.append({
+                    'name': movie['name'],
+                    'cast': matched_cast
+                })
+
+        if matched_movies:
+            for movie in matched_movies:
+                print(movie['name'])
+                print(movie['cast'])
+        else:
+            print("\nNo movies matched the search keyword")
+            
+
 if __name__ == "__main__":
     movies = Movies('./movies.txt')
