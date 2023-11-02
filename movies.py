@@ -29,5 +29,9 @@ class Movies:
                 }
             )
 
+    def list_all_movies(self) :
+        for movie in self._movies:
+            print(movie['name'])
+
 if __name__ == "__main__":
     movies = Movies('./movies.txt')
